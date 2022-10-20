@@ -37,9 +37,4 @@ document.getElementById('breed_selector').appendChild(option);
    console.log(error);
 });
 
-// fonction pour afficher la bonne image de chat et nom de la race au niveaux du result 
-function showBreedImage(index)
-{ 
-  document.getElementById("result_image").src= storedBreeds[index].image.url;
-  document.getElementById('result_breed').innerHTML = storedBreeds[index].name;
-}
+

@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- JS -->
     <script type="text/javascript" src="./assets/js/api-cat.js"></script>
-    <script async type="text/javascript" src="./assets/js/caculate_years_cats.js"></script>
     <script async type="text/javascript" src="./assets/js/function.js"></script>
     <title>Royal Canin</title>
 </head>
@@ -46,7 +45,7 @@
 
     <!-- Formulaire permettant d'inscrire la race et l'age de l'animal -->
     <div id="formCat" class="block bg-lightgrey rounded-4">
-        <form action="#" id="bloc-calculed-years" class="align-items-center card" id="form-years" method="get">
+        <form action="#" id="bloc-calculed-years" class="align-items-center card border-0" id="form-years" method="get">
             <div class="form-group ">
                 <label for="input_breed"> la race de votre chat</label>
                 <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector" class="form-control col-12" name="breed_selector">
@@ -56,12 +55,13 @@
             <div class="form-group ">
                 <label for="input_years"> âge de votre chat</label>
                 <input class="form-control col-2" name="input_years" type="number" id="input_years" >
+                <select name="input_select_years" id="input_select_years">
+                    <option value="month">mois</option>
+                    <option value="years">années</option>
+                </select>
             </div>
-            <select name="input_select_years" id="input_select_years">
-                <option value="month">mois</option>
-                <option value="years">années</option>
-            </select>
-            <input class="btnSubmit bg-red text-white fs-3 rounded-5" type="submit" id="valid_click_cat" onclick="resultCat()">Valider <i class="fa fa-chevron-right"></i></input>
+            
+            <button class="btnSubmit bg-red text-white fs-3 rounded-5" type="submit" id="valid_click_cat" onclick="resultCat()" value=""> Valider <i class="fa fa-chevron-right"></i></button>
         </form>
         
     </div>
@@ -96,10 +96,10 @@
         <div class="block bg-lightgrey socials rounded-4">
             <h5 class="description">Voici la nourriture adaptée à votre animal :</h5>
             <div class="d-flex justify-content-center">
-                <img class="food rounded-4 img-fluid" src="assets/img/Nourriture chat 2.jpg" alt="nourriture pour chat/chien"> <!-- Image variable -->
+                <img class="food rounded-4 img-fluid" id="image_food" src="" alt="nourriture pour chat/chien"> <!-- Image variable -->
                 <div class="flex-column px-4 pt-5">
-                    <p class="text-red fs-5">Chat d'intérieur +7 ans</p> <!-- Texte variable -->
-                    <a href="" class="btnSubmit border-red text-red fs-5 rounded-5">En savoir plus</a> <!-- lien variable -->
+                    <p class="text-red fs-5" id="text_food"></p> <!-- Texte variable -->
+                    <a href="" id="link_food" class="btnSubmit border-red text-red fs-5 rounded-5">En savoir plus</a> <!-- lien variable -->
                 </div>
             </div>
         </div>

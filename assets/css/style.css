@@ -39,6 +39,8 @@ html {
     text-decoration: none;
     background-color: #E2001A;
     cursor: pointer;
+    border: 0px;
+    
 }
 .btnSubmit i {
     position: absolute;
