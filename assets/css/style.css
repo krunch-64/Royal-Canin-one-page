@@ -19,7 +19,7 @@ html {
 }
 
 /* Permet l'alignement initial des boutons */
-.big-buttons {
+.center {
     display: flex;
     align-items: center;
 }
@@ -31,7 +31,6 @@ html {
     margin-bottom: 12px;
     margin-left: 9px;
     margin-right: 9px;
-    background-color: #F6F6F6;
     border-color: white;
     cursor: pointer;
 }
@@ -124,17 +123,21 @@ html {
 
 /* Appels permettant de cacher les éléments désignés par ces ids à la génération initiale de la page */
 #formCat {
-    display: flex;
-    align-items: center;
     display: none;
+    align-items: center;
     background-color: #F6F6F6;
+    padding-left: 40%;
+    margin-top: 15px;
 }
 
 #resultCat {
-    display: flex;
-    align-items: center;
     display: none;
+    align-items: center;
+    flex-direction: column;
+}
 
+#resultCat .block {
+    width: 600px;
 }
 
 
@@ -150,6 +153,7 @@ html {
         display: flex;
         align-items: center;
     }
+
 }
 
 @media only screen and (max-width: 400px) {

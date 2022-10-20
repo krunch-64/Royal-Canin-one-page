@@ -3,14 +3,14 @@
 function formCat() {
     document.getElementById('cat').style.display = 'none';
     document.getElementById('dog').style.display = 'none';
-    document.getElementById('formCat').style.display = 'block';
+    document.getElementById('formCat').style.display = 'flex';
 }
 
 // Fonction permettant d'afficher les résultats du formulaire relatif aux chats
 function resultCat() {
     calculated_years()
     document.getElementById('formCat').style.display = 'none';
-    document.getElementById('resultCat').style.display = 'block';
+    document.getElementById('resultCat').style.display = 'flex';
 }
 
 // Fonction permettant le retour à l'affichage de la page d'accueil

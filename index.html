@@ -27,7 +27,7 @@
     <!-- Bande de séparation du logo et du reste du corps du site -->
     <div class="separator bg-lightgrey"></div>
 
-    <div class="big-buttons d-flex flex-column">
+    <div class="center d-flex flex-column">
         <!-- Boutons permettant d'accéder aux formulaires à remplir selon l'espèce -->
         <div id="cat" class="block bg-lightgrey rounded-4 card image-center" onclick="formCat()">
             <img class="cat-img w-100 rounded-4 img-card-top" src="assets/img/cat.jpg" alt="photo de chat">
@@ -35,7 +35,7 @@
                 <h5 class="text-red card-title">Age de mon chat</h5>
             </div>
         </div>
-        <div id="dog" class="block bg-lightgrey rounded-4 card image-center" onclick="formDog()">
+        <div id="dog" class="block bg-lightgrey rounded-4 card image-center">
             <img class="dog-img w-100 rounded-4 img-card-top" src="assets/img/dog.jpg" alt="photo de chat">
             <div class="card-body pb-2">
                 <h5 class="text-red card-title">Age de mon chien</h5>
@@ -45,25 +45,27 @@
 
 
     <!-- Formulaire permettant d'inscrire la race et l'age de l'animal -->
-    <div id="formCat" class="block bg-lightgrey rounded-4">
-        <form action="#" id="bloc-calculed-years" class="align-items-center card border-0" id="form-years" method="GET">
-            <div class="form-group ">
-                <label for="input_breed" class="description"> la race de votre chat</label>
-                <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector" class="form-control col-12" name="breed_selector">
-                    <option>Race inconnue</option>
-                </select>
-            </div>
-            <div class="form-group ">
-                <label for="input_years"> âge de votre chat</label>
-                <input class="form-control col-2" name="input_years" type="number" id="input_years" >
-                <select name="input_select_years" id="input_select_years">
-                    <option value="month">mois</option>
-                    <option value="years">années</option>
-                </select>
-            </div>
-            
-            <button class="btnSubmit bg-red text-white fs-3 rounded-5" type="submit" id="valid_click_cat" onclick="resultCat()" value=""> Valider <i class="fa fa-chevron-right"></i></button>
-        </form>
+    <div id="formCat">
+        <div class="block bg-lightgrey rounded-4">
+            <form action="#" id="bloc-calculed-years" class="bg-lightgrey align-items-center card border-0" id="form-years" method="GET">
+                <div class="form-group">
+                    <label for="input_breed" class="description"> la race de votre chat</label>
+                    <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector" class="form-control col-12" name="breed_selector">
+                        <option>Race inconnue</option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label for="input_years" class="description"> âge de votre chat</label>
+                    <input class="form-control col-2" name="input_years" type="number" id="input_years" >
+                    <select name="input_select_years" id="input_select_years">
+                        <option value="month">mois</option>
+                        <option value="years">années</option>
+                    </select>
+                </div>
+                
+                <button class="btnSubmit bg-red text-white fs-3 rounded-5" type="submit" id="valid_click_cat" onclick="resultCat()" value=""> Valider <i class="fa fa-chevron-right"></i></button>
+            </form>
+        </div>
     </div>
 
 
