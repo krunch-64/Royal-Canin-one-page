@@ -1,20 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300;400;500;700&display=swap');
 
+/* Modifications générales du font de la page */
 html {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+/* Logo Royal Canin clicable */
 .logo {
     max-width: 300px;
     margin-bottom: 10px;
 }
 
+/* Sépare le logo du reste des informations */
 .separator {
     width: 100%;
     height: 38px;
     background-color: #F6F6F6;
 }
 
+/* Défini la structure générale d'un cadre */
 .block {
     max-width: 100%;
     margin-top: 12px;
@@ -26,21 +30,37 @@ html {
     cursor: pointer;
 }
 
+/* Défini la taille des titres de grands boutons ou du texte présentant les résultats */
 .card-title {
-    color: #E2001A;
     font-size: 1.5rem;
 }
 
-.btnSubmit {
+/* Liens réseaux sociaux */
+.socials i {
+    padding-bottom: 10px;
+    font-size: 2.5rem;
+    transition: 0.1s ease-in-out;
+}
+.socials i:hover {
+    font-size: 2.4rem;
+    color: #E2001A;
+}
+
+/* image de nourriture */
+.food {
+    padding-bottom: 10px;
+    max-height: 250px;
+}
+
+/* Gestion des boutons cutom */
+.btnSubmit, .btnLink {
     padding: 8px;
     padding-left: 32px;
     padding-right: 42px;
     font-size: 30px;
     text-decoration: none;
-    background-color: #E2001A;
     cursor: pointer;
     border: 0px;
-    
 }
 .btnSubmit i {
     position: absolute;
@@ -53,7 +73,40 @@ html {
     margin-left: 10px;
     color: #FFFFFF;
 }
+.btnLink {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+/* Pose un filtre noir et blanc sur les images à la classe sélectionnée */
+.race-img, .dog-img, .cat-img {
+    max-width: 800px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+/* Centre une image sur l'axe x */
+.image-center {
+    align-items: center;
+}
+
+
+/* Couleurs communes des backgrounds, textes et bordures */
+.text-red {
+    color: #E2001A;
+}
+.bg-red {
+    background-color: #E2001A;
+}
+.bg-lightgrey {
+    background-color: #F6F6F6;
+}
+.border-red {
+    border: 1px solid #E2001A;
+}
+
+
+/* Appels permettant de cacher les éléments désignés par ces ids à la génération initiale de la page */
 #formCat {
     display: none;
     background-color: #F6F6F6;
@@ -70,14 +123,4 @@ html {
 
 #resultDog {
     display: none;
-}
-
-.race-img, .dog-img, .cat-img {
-    max-width: 800px;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-      filter: grayscale(100%);
-    }
-
-.image-center {
-    align-items: center;
 }

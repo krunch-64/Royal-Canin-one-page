@@ -1,61 +1,67 @@
 
-    // Fonction permettant d'afficher le formulaire relatif aux chats
-    function formCat() {
-        document.getElementById('cat').style.display = 'none';
-        document.getElementById('dog').style.display = 'none';
-        document.getElementById('formCat').style.display = 'block';
-    }
-
-    // Fonction permettant d'afficher le formulaire relatif aux chiens
-    function formDog() {
-        document.getElementById('cat').style.display = 'none';
-        document.getElementById('dog').style.display = 'none';
-        document.getElementById('formDog').style.display = 'block';
-    }
-
-    // Fonction permettant d'afficher les résultats du formulaire relatif aux chats
-    function resultCat() {
-        calculated_years()
-        document.getElementById('formCat').style.display = 'none';
-        document.getElementById('resultCat').style.display = 'block';
-        
-    }
-
-    // Fonction permettant d'afficher les résultats du formulaire relatif aux chiens
-    function resultDog() {
-        document.getElementById('formDog').style.display = 'none';
-        document.getElementById('resultDog').style.display = 'block';
-    }
-
-    // Fonction permettant le retour à l'affichage de la page d'accueil
-    function home() {
-        document.getElementById('cat').style.display = 'block';
-        document.getElementById('dog').style.display = 'block';
-        document.getElementById('formCat').style.display = 'none';
-        document.getElementById('formDog').style.display = 'none';
-        document.getElementById('resultCat').style.display = 'none';
-        document.getElementById('resultDog').style.display = 'none';
-    }
-
-    // fonction pour afficher la bonne image de chat et nom de la race au niveaux du result 
-function showBreedImage(index)
-{ 
-  document.getElementById("result_image").src= storedBreeds[index].image.url;
-  document.getElementById('result_breed').innerHTML = storedBreeds[index].name;
+// Fonction permettant d'afficher le formulaire relatif aux chats
+function formCat() {
+    document.getElementById('cat').style.display = 'none';
+    document.getElementById('dog').style.display = 'none';
+    document.getElementById('formCat').style.display = 'block';
+}
+// Fonction permettant d'afficher le formulaire relatif aux chiens
+function formDog() {
+    document.getElementById('cat').style.display = 'none';
+    document.getElementById('dog').style.display = 'none';
+    document.getElementById('formDog').style.display = 'block';
+}
+// Fonction permettant d'afficher les résultats du formulaire relatif aux chats
+function resultCat() {
+    calculated_years()
+    document.getElementById('formCat').style.display = 'none';
+    document.getElementById('resultCat').style.display = 'block';
+    
+}
+// Fonction permettant d'afficher les résultats du formulaire relatif aux chiens
+function resultDog() {
+    document.getElementById('formDog').style.display = 'none';
+    document.getElementById('resultDog').style.display = 'block';
+}
+// Fonction permettant le retour à l'affichage de la page d'accueil
+function home() {
+    document.getElementById('cat').style.display = 'block';
+    document.getElementById('dog').style.display = 'block';
+    document.getElementById('formCat').style.display = 'none';
+    document.getElementById('formDog').style.display = 'none';
+    document.getElementById('resultCat').style.display = 'none';
+    document.getElementById('resultDog').style.display = 'none';
 }
 
+
+// fonction pour afficher la bonne image de chat et nom de la race au niveaux du result 
+function showBreedImage(index)
+{ 
+    if(index != null) {
+        document.getElementById("result_image").src= storedBreeds[index].image.url;
+        document.getElementById('result_breed').innerHTML = storedBreeds[index].name;
+    }
+
+    /* Gestion d'un résultat null */
+    else {
+        document.getElementById("result_image").src= 'assets/img/cat2.jpg';
+        document.getElementById('result_breed').innerHTML = 'chat';
+    }
+}
+
+/* Calcul l'âge humain du chat entré en paramètre */
 function calculated_years() {
     let value = 0
     let humain_years = ""
  
-    const form = document.querySelector('form');        // la constante const permet de récuperé le form dans le html
-    form.addEventListener('submit', (e) => {    // addEventListener permet d'écouté le formumlaire est déclance une fonction (e) quand il y a un submit
+    const form = document.querySelector('form');        // la constante const permet de récuperer le form dans le html
+    form.addEventListener('submit', (e) => {    // addEventListener permet d'écouté le formulaire est déclanche une fonction (e) quand il y a un submit
         e.preventDefault()
         // les values du formulaires
         value_years = e.target.input_years.value           
         bool_years = e.target.input_select_years.value
     
-    // pour plus de facilité les années seront convertie en mois , ce que nous vérifions dans cette condition
+    // pour plus de facilité, les années seront convertis en mois , ce que nous vérifions dans cette condition
     if (bool_years == 'years') { value = convert_years_on_month(value_years)}
     else { value = value_years }
 
@@ -155,10 +161,14 @@ function calculated_years() {
 })
 }
 
+
+/* Défini le type de nourriture proposé par le site lors de l'affichage des résultats */
 function animal_food(years) {
+
     let char_text_food;
     let url_link_food;
     let link_image = "assets/img/";
+
     if (years >= 0 && years <=12) {
         link_image += "Nourriture_chat_0.png"
         char_text_food = "pour les chatons jusqu'a 1 ans"
@@ -180,16 +190,12 @@ function animal_food(years) {
         url_link_food ="https://www.royalcanin.com/fr/shop/cats/retail-products/cat-age/senior"
     }
 
-    console.log(link_image)
     document.getElementById('image_food').src= link_image;
     document.getElementById('text_food').innerHTML = char_text_food;
     document.getElementById('link_food').href = url_link_food;
 }
 
-
-
-
 function convert_years_on_month(years) {
-    return 12*years
+    return 12 * years
 }
 
