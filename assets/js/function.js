@@ -15,8 +15,10 @@
 
     // Fonction permettant d'afficher les résultats du formulaire relatif aux chats
     function resultCat() {
+        calculated_years()
         document.getElementById('formCat').style.display = 'none';
         document.getElementById('resultCat').style.display = 'block';
+        
     }
 
     // Fonction permettant d'afficher les résultats du formulaire relatif aux chiens

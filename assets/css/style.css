@@ -71,6 +71,11 @@ html {
 }
 
 .race-img, .dog-img, .cat-img {
+    max-width: 800px;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
       filter: grayscale(100%);
     }
+
+.image-center {
+    align-items: center;
+}

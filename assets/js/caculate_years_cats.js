@@ -3,16 +3,14 @@
 function calculated_years() {
     let value = 0
     let humain_years = ""
-
+ 
     const form = document.querySelector('form');        // la constante const permet de récuperé le form dans le html
     form.addEventListener('submit', (e) => {    // addEventListener permet d'écouté le formumlaire est déclance une fonction (e) quand il y a un submit
         e.preventDefault()
         // les values du formulaires
         value_years = e.target.input_years.value           
         bool_years = e.target.input_select_years.value
-        breed_selector = e.target.inbreed_selector
-        console.log(breed_selector)
-    
+        console.log(value_years)
     
     // pour plus de facilité les années seront convertie en mois , ce que nous vérifions dans cette condition
     if (bool_years == 'years') { value = convert_years_on_month(value_years)}
@@ -108,8 +106,8 @@ function calculated_years() {
         humain_years = "96 ans"
     }
 
-    console.log(humain_years) 
-   
+
+   document.getElementById('result_years').innerHTML = humain_years;
 })
 }
 
