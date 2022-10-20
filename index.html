@@ -46,9 +46,9 @@
 
     <!-- Formulaire permettant d'inscrire la race et l'age de l'animal -->
     <div id="formCat" class="block bg-lightgrey rounded-4">
-        <form action="#" id="bloc-calculed-years" class="align-items-center card border-0" id="form-years" method="get">
+        <form action="#" id="bloc-calculed-years" class="align-items-center card border-0" id="form-years" method="GET">
             <div class="form-group ">
-                <label for="input_breed"> la race de votre chat</label>
+                <label for="input_breed" class="description"> la race de votre chat</label>
                 <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector" class="form-control col-12" name="breed_selector">
                     <option>Race inconnue</option>
                 </select>
@@ -64,11 +64,6 @@
             
             <button class="btnSubmit bg-red text-white fs-3 rounded-5" type="submit" id="valid_click_cat" onclick="resultCat()" value=""> Valider <i class="fa fa-chevron-right"></i></button>
         </form>
-        
-    </div>
-
-    <div id="formDog" class="block bg-lightgrey rounded-4">
-        <a class="btnSubmit bg-red text-white fs-3 rounded-5" onclick="resultDog()">Valider <i class="fa fa-chevron-right"></i></a>
     </div>
 
 
