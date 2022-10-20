@@ -18,6 +18,12 @@ html {
     background-color: #F6F6F6;
 }
 
+/* Permet l'alignement initial des boutons */
+.big-buttons {
+    display: flex;
+    align-items: center;
+}
+
 /* Défini la structure générale d'un cadre */
 .block {
     max-width: 100%;
@@ -123,4 +129,24 @@ html {
 
 #resultDog {
     display: none;
+}
+
+@media only screen and (min-width: 500px) {
+    .block {
+        max-width: 500px;
+        background-color: #F6F6F6;
+        border-color: white;
+        cursor: pointer;
+    }
+    
+    .big-buttons {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .logo {
+        width: 80%;
+    }
 }
