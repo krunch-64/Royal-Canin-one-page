@@ -13,7 +13,7 @@ let storedBreeds = []
  })
 .then((data) => {
    
-   //filter to only include those with an `image` object
+   //filtre les images seulement
    data = data.filter(img=> img.image?.url!=null)
    
   storedBreeds = data;
