@@ -99,6 +99,10 @@ html {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
+.race-img {
+    width: 100%;
+    max-width: 600px;
+}
 
 /* Centre une image sur l'axe x */
 .image-center {
