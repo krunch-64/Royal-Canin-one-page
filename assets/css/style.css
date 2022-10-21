@@ -126,6 +126,7 @@ html {
 
 
 /* Appels permettant de cacher les éléments désignés par ces ids à la génération initiale de la page */
+/* et modification des balises à id */
 #formCat {
     display: none;
     align-items: center;
@@ -164,5 +165,17 @@ html {
 @media only screen and (max-width: 400px) {
     .logo {
         width: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #formCat {
+        padding-left: 25%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #formCat {
+        padding-left: 20%;
     }
 }
