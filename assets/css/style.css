@@ -162,6 +162,7 @@ html {
 
 }
 
+/* Modification d'éléments en fonction de la taille de l'image */
 @media only screen and (max-width: 400px) {
     .logo {
         width: 80%;
@@ -171,6 +172,13 @@ html {
 @media only screen and (max-width: 500px) {
     #formCat {
         padding-left: 25%;
+    }
+    .structured {
+        flex-direction: column;
+    }
+    .food {
+        max-height: auto;
+        max-width: 50%;
     }
 }
 
